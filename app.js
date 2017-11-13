@@ -28,7 +28,7 @@ server.post('/api/messages', connector.listen());
 //Conexion de LUIS
 const qnarecognizer = new cognitiveservices.QnAMakerRecognizer({ knowledgeBaseId: '408b01d6-96c3-4a63-875d-19a02cf2f7c5', subscriptionKey: '48243fa8da7e44b8aeddcb4b502dc246' , top: 4});
 const recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/94b2f2a5-2c10-4a7b-bac5-91b457162267?subscription-key=1b32aced334346dcb4d40613fac774fe&verbose=true&timezoneOffset=-420&q=');
-var intents = new builder.IntentDialog({ recognizers: [ qnarecognizer, recognizer] });
+var intents = new builder.IntentDialog({ recognizers: [ recognizer] });
 
 //Creamos raiz de dialogo con LUIS
 bot.dialog('/', intents) 
@@ -104,9 +104,10 @@ intents.matches('Gracias', function (session) {
     session.send("Es un gusto poder ayudarte. Me alegro que haya sido de gran utilidad");
 });
 
-intents.matches('qna', [
+/*intents.matches('qna', [
     function (session, args, next) {
         var answerEntity = builder.EntityRecognizer.findEntity(args.entities, 'answer');
         session.send(answerEntity.entity);
     }
+    */
 ]);
