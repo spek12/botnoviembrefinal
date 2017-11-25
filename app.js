@@ -94,7 +94,7 @@ intents.matches('Temario', function (session) {
 
 //Dialogo de cambiar
 intents.matches('Cambiar', function (session) {
-    session.send("Claro, para cambiar tu contraseña, solo sigue los siguientes pasos: <br/>  1.- <br/> 2.-");
+    session.send("Claro, para cambiar tu contraseña, solo sigue los siguientes pasos: <br/> ");
                var msg = new builder.Message(session)
             .attachments([{
                 contentType: "image/png",
@@ -107,7 +107,7 @@ intents.matches('Cambiar', function (session) {
 
 //Dialogo de cambiar
 intents.matches('Restablecer', function (session) {
-    session.send("Claro, para restablecer tu contraseña, solo sigue los siguientes pasos: <br/>  1.- <br/> 2.-");
+    session.send("Claro, para restablecer tu contraseña, solo sigue los siguientes pasos: <br/> ");
                var msg = new builder.Message(session)
             .attachments([{
                 contentType: "image/png",
