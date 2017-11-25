@@ -87,7 +87,39 @@ intents.matches('Creadores', function (session) {
     session.send("Gracias por preguntar, mis creadores son: Angel Aniel Santana Payan y Armando Najera Benavidez");
 });
 
-//Dialogo de cardex
+//Dialogo de temario
+intents.matches('Temario', function (session) {
+    session.send("Lo siento :(, amig@. Por el momento solo conozco de Campus Virtual y de Conecta UACJ");
+});
+
+//Dialogo de cambiar
+intents.matches('Cambiar', function (session) {
+    session.send("Claro, para cambiar tu contraseña, solo sigue los siguientes pasos: <br/>  1.- <br/> 2.-");
+               var msg = new builder.Message(session)
+            .attachments([{
+                contentType: "image/png",
+                contentUrl: "http://i63.tinypic.com/210zts4.png",
+            }]);
+              session.endDialog(msg);
+    
+});
+
+
+//Dialogo de cambiar
+intents.matches('Restablecer', function (session) {
+    session.send("Claro, para restablecer tu contraseña, solo sigue los siguientes pasos: <br/>  1.- <br/> 2.-");
+               var msg = new builder.Message(session)
+            .attachments([{
+                contentType: "image/png",
+                contentUrl: "http://i66.tinypic.com/1zx08pk.png",
+            }]);
+              session.endDialog(msg);
+    
+});
+
+
+
+//Dialogo de tablero de Campus virtal
 intents.matches('Tablero', function (session) {
     session.send("Entra a la pagina de Conecta UACJ y una vez que hayas seleccionado Campus Virtual, ubica en la sección Sitios tu instituto, haz clic sobre tu Instituto");
                var msg = new builder.Message(session)
@@ -99,11 +131,13 @@ intents.matches('Tablero', function (session) {
     
 });
 
-//Dialogo de nuevo ingreso 
+//Dialogo de gracias
 intents.matches('Gracias', function (session) {
     session.send("Es un gusto poder ayudarte. Me alegro que haya sido de gran utilidad");
 });
 
+
+//Qna Maker
 intents.matches('qna', [
     function (session, args, next) {
         var answerEntity = builder.EntityRecognizer.findEntity(args.entities, 'answer');
