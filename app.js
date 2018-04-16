@@ -97,7 +97,7 @@ intents.matches('Temario', function (session) {
 
 //Dialogo de Calendario
 intents.matches('Calendario', function (session) {
-    session.send("El calendario de la UACJ lo puedes acceder en http://www.uacj.mx/calendario/Paginas/index_2018.html");
+    session.send("El calendario de la UACJ lo puedes acceder en <a href='http://www.uacj.mx/calendario/Paginas/index_2018.html'>Calendario oficial</a>");
 });
 
 //Dialogo de cambiar
