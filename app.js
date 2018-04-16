@@ -65,15 +65,7 @@ intents.matches('Saludar', [
 ]);
 
 
-//Dialogo de temario
-intents.matches('Calendario', function (session) {
-    session.send("El calendario de la UACJ lo puedes acceder en http://www.uacj.mx/calendario/Paginas/index_2018.html");
-});
 
-//Dialogo de temario
-intents.matches('Temario', function (session) {
-    session.send("Lo siento :(, amig@. Por el momento solo conozco de Campus Virtual y de Conecta UACJ");
-});
 
 //Dialogo de como estas bot con LUIS
 intents.matches('Estado', function (session) {
@@ -101,6 +93,11 @@ intents.matches('Creadores', function (session) {
 //Dialogo de temario
 intents.matches('Temario', function (session) {
     session.send("Lo siento :(, amig@. Por el momento solo conozco de Campus Virtual y de Conecta UACJ");
+});
+
+//Dialogo de Calendario
+intents.matches('Calendario', function (session) {
+    session.send("El calendario de la UACJ lo puedes acceder en http://www.uacj.mx/calendario/Paginas/index_2018.html");
 });
 
 //Dialogo de cambiar
